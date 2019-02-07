@@ -5,8 +5,6 @@ ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -25,6 +23,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+gem 'active_model_serializers', '~> 0.10.8'
+gem 'redis', '~> 4.1'
+gem 'sidekiq', '~> 5.2', '>= 5.2.5'
+gem 'sinatra', '~> 2.0', '>= 2.0.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -40,6 +43,11 @@ group :development, :test do
 
   # A Ruby static code analyzer, based on the community Ruby style guide.
   gem 'rubocop', require: false
+
+  gem 'awesome_print', '~> 1.8'
+  gem 'dotenv-rails', '~> 2.6'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 group :development do
@@ -59,6 +67,8 @@ group :test do
   # Making tests easy on the fingers and eyes
   gem 'shoulda-matchers', '~> 3.1'
 end
+
+gem 'pg', '0.20.0', group: :production
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
