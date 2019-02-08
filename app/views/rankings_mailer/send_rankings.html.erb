@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <h1> Rankings </h1>
+    <table>
+      <tr>
+        <th>ID &nbsp;</th>
+        <th>Rank &nbsp;</th>
+        <th>First name &nbsp;</th>
+        <th>Last name &nbsp;</th>
+        <th>Email</th>
+      </tr>
+
+      <% @leader.each do |user| %>
+        <tr>
+          <td><%= user['id'] %></td>
+          <td><%= user['rank'] %></td>
+          <td><%= user['first_name'] %></td>
+          <td><%= user['last_name'] %></td>
+          <td><%= user['email'] %></td>
+        </tr>
+      <% end %>
+    </table>
+  </body>
+</html>

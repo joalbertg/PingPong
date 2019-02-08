@@ -1,0 +1,1 @@
+# run workers: sidekiq -C config/sidekiq.yml
