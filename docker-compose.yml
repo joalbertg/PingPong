@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  redis:
+    image: 'redis:6.0-alpine'
+    command: redis-server
+    volumes:
+      - 'redis:/data'
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: >
+      bash -c "rm -f tmp/pids/server.pid &&
+      bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - 'redis'
+    env_file:
+      - '.env'
+    environment:
+      RAILS_ENV: development
+
+  sidekiq:
+    depends_on:
+      - app
+      - redis
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sidekiq -C config/sidekiq.yml
+    volumes:
+      - .:/myapp
+    env_file:
+      - '.env'
+    environment:
+      RAILS_ENV: development
+
+volumes:
+  redis:
+

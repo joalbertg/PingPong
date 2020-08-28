@@ -26,10 +26,13 @@
 
 /public/assets
 .byebug_history
-.ruby-version
+.ruby-gemset
 .rvmrc
 .env
 .DS_Store
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+*dump.rdb
+
