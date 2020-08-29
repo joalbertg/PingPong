@@ -71,7 +71,7 @@ end
 gem 'pg', '0.20.0', group: :production
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # A lightning fast JSON:API serializer for Ruby Objects.
 gem 'fast_jsonapi', '~> 1.5'
