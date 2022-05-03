@@ -26,7 +26,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'active_model_serializers', '~> 0.10.8'
 gem 'redis', '~> 4.1'
 gem 'sidekiq', '~> 5.2', '>= 5.2.5'
-gem 'sinatra', '~> 2.0', '>= 2.0.5'
+gem 'sinatra', '~> 2.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
